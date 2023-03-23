@@ -2,13 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnEnemies : MonoBehaviour
+public class EnemiesSpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject _template;
+    [SerializeField] private NPC _npc;
     [SerializeField] private Transform _spawnPoints;
+    [SerializeField] private Transform _targetPoint;
 
     private Transform[] _points;
+
+    private int _spawnDelay = 2;
     private int _currentPoint;
+    private int _npcCount = 10;
 
     void Start()
     {
@@ -22,14 +26,15 @@ public class SpawnEnemies : MonoBehaviour
         StartCoroutine(Spawn());
     }
 
-    IEnumerator Spawn()
+    private IEnumerator Spawn()
     {
-        var waitForSeconds = new WaitForSeconds(2);
+        var waitForSeconds = new WaitForSeconds(_spawnDelay);
 
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < _npcCount; i++)
         {
             Transform point = _points[_currentPoint];
-            Instantiate(_template, _points[_currentPoint].position, Quaternion.identity);
+            NPC npc = Instantiate(_npc, _points[_currentPoint].position, Quaternion.identity);
+            npc.Init(_targetPoint);
             _currentPoint++;
 
             if (_currentPoint == _points.Length)

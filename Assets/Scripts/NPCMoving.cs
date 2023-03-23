@@ -5,17 +5,21 @@ using UnityEngine;
 
 public class NPCMoving : MonoBehaviour
 {
-    private Transform _target;
     [SerializeField] private float _speed;
+    private Transform _target;
 
-    private void Start()
+
+    private void Update()
     {
-        _target = GameObject.FindGameObjectWithTag("targetPoint").GetComponent<Transform>();
+        if (_target != null)
+        {
+            transform.LookAt(_target);
+            transform.position = Vector3.MoveTowards(transform.position, _target.position, _speed * Time.deltaTime);
+        }      
     }
 
-    private void FixedUpdate()
+    public void SetTarget(Transform target)
     {
-        transform.LookAt(_target);
-        transform.position = Vector3.MoveTowards(transform.position, _target.position, _speed * Time.deltaTime);
+        _target= target;
     }
 }

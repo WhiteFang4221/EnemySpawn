@@ -246,7 +246,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &963194225
 GameObject:
@@ -331,7 +331,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 31.105, y: -178.919, z: 0.558}
 --- !u!114 &963194229
 MonoBehaviour:
@@ -345,8 +345,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e06e507f820b77418ac3b2db4facee5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _template: {fileID: 5033125471545987900, guid: 45dea8a3dfcd8954189dd3b319e351ff, type: 3}
+  _npc: {fileID: 6635416521107974642, guid: 45dea8a3dfcd8954189dd3b319e351ff, type: 3}
   _spawnPoints: {fileID: 2098125575}
+  _targetPoint: {fileID: 1004515528}
 --- !u!1 &1004515527
 GameObject:
   m_ObjectHideFlags: 0
