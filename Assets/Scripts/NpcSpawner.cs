@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemiesSpawner : MonoBehaviour
+public class NpcSpawner : MonoBehaviour
 {
     [SerializeField] private NPC _npc;
     [SerializeField] private Transform _spawnPoints;
@@ -14,7 +14,7 @@ public class EnemiesSpawner : MonoBehaviour
     private int _currentPoint;
     private int _npcCount = 10;
 
-    void Start()
+    private void Start()
     {
         _points = new Transform[_spawnPoints.childCount];
 

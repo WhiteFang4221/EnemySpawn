@@ -6,8 +6,8 @@ using UnityEngine;
 public class NPCMoving : MonoBehaviour
 {
     [SerializeField] private float _speed;
-    private Transform _target;
 
+    private Transform _target;
 
     private void Update()
     {
